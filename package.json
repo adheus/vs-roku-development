@@ -11,7 +11,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.deploy"
+        "onCommand:extension.deploy",
+        "onCommand:extension.debug"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -50,7 +51,7 @@
             },
             {
                 "command": "extension.debug",
-                "title": "Roku debug console",
+                "title": "Debug console",
                 "category": "Roku"
             }
         ]

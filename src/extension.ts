@@ -14,14 +14,41 @@ export function activate(context: vscode.ExtensionContext) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.deploy', () => {
+    let deployDisposable = vscode.commands.registerCommand('extension.deploy', () => {
         // The code you place here will be executed every time your command is executed
 
+        const config = vscode.workspace.getConfiguration("roku-development");
+        const ipAddress = config.get("ip");
+
         // Display a message box to the user
-        vscode.window.showInformationMessage('Deploying app to Roku device [192.168.0.46]');
+        vscode.window.showInformationMessage(`Deploying app to Roku device [${ipAddress}]`);
     });
 
-    context.subscriptions.push(disposable);
+
+    context.subscriptions.push(deployDisposable);
+
+    let debugDisposable = vscode.commands.registerCommand('extension.debug', () => {
+        // The code you place here will be executed every time your command is executed
+        const rokuDebugConsoleName = "Roku debug console";
+        const config = vscode.workspace.getConfiguration("roku-development");
+        const ipAddress = config.get("ip");
+        const command = `telnet ${ipAddress} 8085`;
+
+
+        let rokuConsole = vscode.window.terminals.find(terminal => terminal.name === rokuDebugConsoleName);
+
+        if (!rokuConsole) {
+            rokuConsole = vscode.window.createTerminal(rokuDebugConsoleName);
+            rokuConsole.sendText(command);
+            
+            // Display a message box to the user
+            vscode.window.showInformationMessage(`Started debug console for Roku device [${ipAddress}]`);
+        }
+
+        rokuConsole.show();
+    });
+
+    context.subscriptions.push(debugDisposable);
 }
 
 // this method is called when your extension is deactivated
