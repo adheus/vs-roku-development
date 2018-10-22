@@ -2,6 +2,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as RokuApi from './utils/rokuApi';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -21,7 +22,8 @@ export function activate(context: vscode.ExtensionContext) {
         const ipAddress = config.get("ip");
 
         // Display a message box to the user
-        vscode.window.showInformationMessage(`Deploying app to Roku device [${ipAddress}]`);
+        vscode.window.showInformationMessage('Deploying app to Roku device [192.168.0.46]');
+        RokuApi.pressHome();
     });
 
 
