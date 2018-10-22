@@ -12,3 +12,11 @@ function getRokuIp() {
 export function pressHome() {
   axios.post(`http://${getRokuIp()}:8060/keypress/home`);
 }
+
+export function getDebugConsoleCommand(): string {
+  return `telnet ${getRokuIp()} 8085`;
+}
+
+export function getRokuDevice(): string {
+  return `Roku device [${getRokuIp()}]`;
+}
