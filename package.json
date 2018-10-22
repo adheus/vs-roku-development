@@ -19,21 +19,21 @@
             "type": "object",
             "title": "Roku configuration",
             "properties": {
-                "deployment.ip": {
+                "roku-development.ip": {
                     "type": [
                         "string"
                     ],
                     "default": "192.168.0.46",
                     "description": "Roku device IP address used for deployment."
                 },
-                "deployment.username": {
+                "roku-development.username": {
                     "type": [
                         "string"
                     ],
                     "default": "rokudev",
                     "description": "Roku device developer mode username"
                 },
-                "deployment.password": {
+                "roku-development.password": {
                     "type": [
                         "string"
                     ],
