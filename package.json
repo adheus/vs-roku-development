@@ -1,7 +1,7 @@
 {
     "name": "roku-development",
     "displayName": "Roku Development",
-    "description": "An extension for debugging and deploying Roku apps for VS Code",
+    "description": "An extension for VS Code to debug and deploy Roku apps",
     "version": "0.0.1",
     "publisher": "calango.io",
     "engines": {
@@ -15,10 +15,43 @@
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Roku configuration",
+            "properties": {
+                "deployment.ip": {
+                    "type": [
+                        "string"
+                    ],
+                    "default": "192.168.0.46",
+                    "description": "Roku device IP address used for deployment."
+                },
+                "deployment.username": {
+                    "type": [
+                        "string"
+                    ],
+                    "default": "rokudev",
+                    "description": "Roku device developer mode username"
+                },
+                "deployment.password": {
+                    "type": [
+                        "string"
+                    ],
+                    "default": "",
+                    "description": "Roku device developer mode password"
+                }
+            }
+        },
         "commands": [
             {
                 "command": "extension.deploy",
-                "title": "Roku deploy"
+                "title": "Deploy",
+                "category": "Roku"
+            },
+            {
+                "command": "extension.debug",
+                "title": "Roku debug console",
+                "category": "Roku"
             }
         ]
     },
