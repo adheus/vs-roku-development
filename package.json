@@ -3,7 +3,11 @@
     "displayName": "Roku Development",
     "description": "An extension for VS Code to debug and deploy Roku apps",
     "version": "0.0.1",
-    "publisher": "calango.io",
+    "publisher": "fuzecc",
+    "repository": {
+      "type" : "git",
+      "url" : "https://github.com/adheus/vs-roku-development.git"
+    },
     "engines": {
         "vscode": "^1.28.0"
     },
