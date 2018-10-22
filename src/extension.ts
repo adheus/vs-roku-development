@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         // Display a message box to the user
         vscode.window.showInformationMessage(`Deploying app to ${RokuApi.getRokuDevice()}`);
-        RokuApi.pressHome();
+        RokuApi.deploy();
     });
 
 
@@ -35,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
         if (rokuConsole) {
             rokuConsole.dispose();
         }
-        
+
         rokuConsole = vscode.window.createTerminal(rokuDebugConsoleName);
         rokuConsole.sendText(RokuApi.getDebugConsoleCommand());
 
