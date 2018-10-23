@@ -4,7 +4,10 @@ This extension helps with Roku development in VS code. You can deploy and debug 
 
 ## Features
 
-You can use the commands Roku>Deploy and Roku> Debug console after setting up you device configurations.
+Commands Available:
+* `> Roku: Deploy`: Installs and runs the app on the roku device.
+* `> Roku: Debug console`: Opens a terminal and connects to the debug console on the roku device
+* `> Roku: Deploy & Debug`: Executes "Deploy" and "Debug Console" commands consecutively
 
 ## Requirements
 
@@ -23,6 +26,11 @@ There's an issue when running the debug console multiple times. We're working on
 ## Release Notes
 
 This is our first release. Any feedback is welcome.
+
+### 0.2.1
+
+Added "Deploy & Debug command"
+Renamed commands identifiers to roku.dev.[command-name]
 
 ### 0.1.1
 
