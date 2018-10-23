@@ -2,11 +2,12 @@
     "name": "roku-development",
     "displayName": "Roku Development",
     "description": "An extension for VS Code to debug and deploy Roku apps",
-    "version": "0.0.1",
+    "version": "0.1.1",
     "publisher": "fuzecc",
+    "icon": "icons/icon.png",
     "repository": {
-      "type" : "git",
-      "url" : "https://github.com/adheus/vs-roku-development.git"
+        "type": "git",
+        "url": "https://github.com/adheus/vs-roku-development.git"
     },
     "engines": {
         "vscode": "^1.28.0"

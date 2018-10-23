@@ -24,7 +24,11 @@ There's an issue when running the debug console multiple times. We're working on
 
 This is our first release. Any feedback is welcome.
 
-### 1.0.0
+### 0.1.1
+
+Added icon to extension package
+
+### 0.1.0
 
 Initial release of Roku development extension
 
