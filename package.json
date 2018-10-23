@@ -16,6 +16,7 @@
         "Other"
     ],
     "activationEvents": [
+        "onCommand:extension.deployAndDebug",
         "onCommand:extension.deploy",
         "onCommand:extension.debug"
     ],
@@ -49,6 +50,11 @@
             }
         },
         "commands": [
+            {
+              "command": "extension.deployAndDebug",
+              "title": "Deploy & Debug",
+              "category": "Roku"
+            },
             {
                 "command": "extension.deploy",
                 "title": "Deploy",
