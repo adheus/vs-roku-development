@@ -43,13 +43,13 @@ export function activate(context: vscode.ExtensionContext) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let deployDisposable = vscode.commands.registerCommand('extension.deploy', deployApp);
+    let deployDisposable = vscode.commands.registerCommand('roku.dev.deploy', deployApp);
     context.subscriptions.push(deployDisposable);
 
-    let debugDisposable = vscode.commands.registerCommand('extension.debug', launchDebug);
+    let debugDisposable = vscode.commands.registerCommand('roku.dev.debug', launchDebug);
     context.subscriptions.push(debugDisposable);
 
-    let deployAndDebugDisposable = vscode.commands.registerCommand('extension.deployAndDebug', deployAndDebug);
+    let deployAndDebugDisposable = vscode.commands.registerCommand('roku.dev.deployAndDebug', deployAndDebug);
     context.subscriptions.push(deployAndDebugDisposable);
 
 }

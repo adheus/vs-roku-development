@@ -16,9 +16,9 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.deployAndDebug",
-        "onCommand:extension.deploy",
-        "onCommand:extension.debug"
+        "onCommand:roku.dev.deployAndDebug",
+        "onCommand:roku.dev.deploy",
+        "onCommand:roku.dev.debug"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -51,17 +51,17 @@
         },
         "commands": [
             {
-              "command": "extension.deployAndDebug",
+              "command": "roku.dev.deployAndDebug",
               "title": "Deploy & Debug",
               "category": "Roku"
             },
             {
-                "command": "extension.deploy",
+                "command": "roku.dev.deploy",
                 "title": "Deploy",
                 "category": "Roku"
             },
             {
-                "command": "extension.debug",
+                "command": "roku.dev.debug",
                 "title": "Debug console",
                 "category": "Roku"
             }
