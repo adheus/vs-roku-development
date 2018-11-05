@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as vscode from 'vscode';
 import * as rokudeploy from 'roku-deploy';
+import * as fs from 'fs';
 
 function getConfigs() {
   return vscode.workspace.getConfiguration('roku-development');
@@ -25,9 +26,9 @@ export function getRokuDevice(): string {
 async function deployApp() {
   const currentFolders = vscode.workspace.workspaceFolders;
   const config = getConfigs();
-  const ip: string|undefined = config.get('ip');
-  const username: string|undefined = config.get('username');
-  const password: string|undefined = config.get('password');
+  const ip: string | undefined = config.get('ip');
+  const username: string | undefined = config.get('username');
+  const password: string | undefined = config.get('password');
 
   if (!currentFolders) {
     vscode.window.showErrorMessage('Unable to launch your application');
@@ -42,17 +43,28 @@ async function deployApp() {
 
   let currentFolder = currentFolders[0].uri.fsPath;
 
-  try {
-    await rokudeploy.deploy({
-      host: ip,
-      password: password,
-      rootDir: currentFolder,
-      username: username,
-    });
-    vscode.window.showInformationMessage('Application launched successfully');
-  } catch (error) {
-    vscode.window.showErrorMessage('Unable to launch your application');
-  }
+  fs.readdir(currentFolder, async function (error, fileNames) {
+    if (error) {
+      return;
+    } else {
+
+      const ignoreHiddenFiles = fileNames.filter(file => !file.startsWith("."));
+
+      try {
+        await rokudeploy.deploy({
+          host: ip,
+          password: password,
+          rootDir: currentFolder,
+          outDir: currentFolder + "/.out",
+          files: ignoreHiddenFiles,
+          username: username,
+        });
+        vscode.window.showInformationMessage('Application launched successfully');
+      } catch (error) {
+        vscode.window.showErrorMessage('Unable to launch your application');
+      }
+    }
+  });
 }
 
 export async function deploy() {

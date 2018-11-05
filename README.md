@@ -27,6 +27,10 @@ There's an issue when running the debug console multiple times. We're working on
 
 This is our first release. Any feedback is welcome.
 
+### 0.2.2
+
+Fixed a bug when where the plugin wouldn't deploy any custom directory inside the project.
+
 ### 0.2.1
 
 Added "Deploy & Debug command"

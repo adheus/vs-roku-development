@@ -2,7 +2,7 @@
     "name": "roku-development",
     "displayName": "Roku Development",
     "description": "An extension for VS Code to debug and deploy Roku apps",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "publisher": "fuzecc",
     "icon": "icons/icon.png",
     "repository": {
