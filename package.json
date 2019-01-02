@@ -46,6 +46,13 @@
                     ],
                     "default": "",
                     "description": "Roku device developer mode password"
+                },
+                "roku-development.dir": {
+                    "type": [
+                        "string"
+                    ],
+                    "default": "",
+                    "description": "Directory to deploy relative to workspace"
                 }
             }
         },

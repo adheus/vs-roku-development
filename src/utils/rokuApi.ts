@@ -2,6 +2,7 @@ import axios from 'axios';
 import * as vscode from 'vscode';
 import * as rokudeploy from 'roku-deploy';
 import * as fs from 'fs';
+import * as path from 'path';
 
 function getConfigs() {
   return vscode.workspace.getConfiguration('roku-development');
@@ -29,6 +30,7 @@ async function deployApp() {
   const ip: string | undefined = config.get('ip');
   const username: string | undefined = config.get('username');
   const password: string | undefined = config.get('password');
+  const dir: string | undefined = config.get('dir')
 
   if (!currentFolders) {
     vscode.window.showErrorMessage('Unable to launch your application');
@@ -42,6 +44,9 @@ async function deployApp() {
   }
 
   let currentFolder = currentFolders[0].uri.fsPath;
+  if (dir != "") {
+    currentFolder = path.join(currentFolder, dir);
+  }
 
   fs.readdir(currentFolder, async function (error, fileNames) {
     if (error) {
