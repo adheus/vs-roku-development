@@ -53,6 +53,16 @@
                     ],
                     "default": "",
                     "description": "Directory to deploy relative to workspace"
+                },
+                "roku-development.files": {
+                    "type": [
+                        "array"
+                    ],
+                    "default": [
+                        "manifest",
+                        "**/*.*"
+                    ],
+                    "description": "Array of files to pass in to roku-deploy"
                 }
             }
         },
