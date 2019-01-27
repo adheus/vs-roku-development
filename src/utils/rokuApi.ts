@@ -44,7 +44,7 @@ async function deployApp() {
   }
 
   let currentFolder = currentFolders[0].uri.fsPath;
-  if (dir != "") {
+  if (dir != undefined && dir != "") {
     currentFolder = path.join(currentFolder, dir);
   }
 
