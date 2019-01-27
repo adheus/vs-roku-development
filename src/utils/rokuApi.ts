@@ -1,7 +1,6 @@
 import axios from 'axios';
 import * as vscode from 'vscode';
 import * as rokudeploy from 'roku-deploy';
-import * as fs from 'fs';
 import * as path from 'path';
 
 function getConfigs() {
