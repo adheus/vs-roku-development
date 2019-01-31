@@ -2,7 +2,7 @@
     "name": "roku-development",
     "displayName": "Roku Development",
     "description": "An extension for VS Code to debug and deploy Roku apps",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "publisher": "fuzecc",
     "icon": "icons/icon.png",
     "repository": {
@@ -46,14 +46,31 @@
                     ],
                     "default": "",
                     "description": "Roku device developer mode password"
+                },
+                "roku-development.dir": {
+                    "type": [
+                        "string"
+                    ],
+                    "default": "",
+                    "description": "Directory to deploy relative to workspace"
+                },
+                "roku-development.files": {
+                    "type": [
+                        "array"
+                    ],
+                    "default": [
+                        "manifest",
+                        "**/*.*"
+                    ],
+                    "description": "Array of files to pass in to roku-deploy"
                 }
             }
         },
         "commands": [
             {
-              "command": "roku.dev.deployAndDebug",
-              "title": "Deploy & Debug",
-              "category": "Roku"
+                "command": "roku.dev.deployAndDebug",
+                "title": "Deploy & Debug",
+                "category": "Roku"
             },
             {
                 "command": "roku.dev.deploy",
@@ -82,8 +99,7 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
-        "@types/axios": "^0.14.0",
         "axios": "^0.18.0",
-        "roku-deploy": "^0.2.1"
+        "roku-deploy": "^2.0.0"
     }
 }
