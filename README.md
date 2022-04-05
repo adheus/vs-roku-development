@@ -1,3 +1,8 @@
+## ⚠️ This project is no longer maintained
+There is a great extension maintained by the Roku Community:
+
+[Brightscript Language](https://github.com/rokucommunity/vscode-brightscript-language)
+
 # roku-development README
 
 This extension helps with Roku development in VS code. You can deploy and debug your code through VS Code
